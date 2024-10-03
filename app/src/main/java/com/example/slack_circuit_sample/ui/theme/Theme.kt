@@ -2,12 +2,15 @@ package com.example.slack_circuit_sample.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.slack_circuit_sample.Greeting
@@ -58,10 +61,21 @@ fun SlackCircuitSampleTheme(
     )
 }
 
+@Composable
+fun Circuit(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Hello $name!",
+        modifier = modifier
+    )
+}
+
 @Preview(showBackground = true)
 @Composable
 fun PreviewSlackCircuitSampleTheme() {
     SlackCircuitSampleTheme {
-         Greeting("Android")
+        Column {
+            Greeting("Android")
+            Circuit("Romie")
+        }
     }
 }
